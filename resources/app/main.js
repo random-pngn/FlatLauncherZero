@@ -23,7 +23,7 @@ function isExistFile(file) {
 // メインウィンドウ
 let mainWindow;
 
-function createWindow() {
+async function createWindow() {
   // メインウィンドウを作成します
   mainWindow = new BrowserWindow({width: 800, height: 600,  'frame': false, 'fullscreen':true, webPreferences: {nodeIntegration: true}});
 
