@@ -36,6 +36,9 @@ function createWindow() {
     slashes: true
   }));
 
+  // Self Update
+  await git("./").pull();
+
   // デベロッパーツールの起動
   //mainWindow.webContents.openDevTools();
 
