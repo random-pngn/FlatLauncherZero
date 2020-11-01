@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <script type="text/javascript" src="plugins/jquery-3.3.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <style media="screen">
+      div.pc{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        margin: 10px;
+        color: white;
+        opacity: 1;
+      }
+    </style>
+    <script type="text/javascript">
+      $(function() {
+        var hexDigits = new Array
+        ("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
+
+        //Function to convert rgb color to hex format
+        function rgb2hex(rgb) {
+         rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+        }
+
+        function hex(x) {
+          return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+         }
+
+        let graduations = {
+          //"sprout" : ["#7A9B46", "#8E983A", "#94933D", "#53A255", "#699D4D", "#839948",
+          //            "#45A194", "#3FA286", "#37A05F", "#599778", "#5AA06F", "#5BA159"],
+          "default" : ["#E49AAB", "#FF9E7B", "#FFC98B", "#F7DB70", "#BFD586", "#80BEAF",
+                      "#75CCE8", "#939CE7", "#CCB1EA"],
+          "wisteria" : ["#A184AD", "#B590B2", "#D8C5D3", "#A591C5", "#AA9CCA", "#ACA5C5",
+                      "#B77FA1", "#B98FA8", "#C5A1B6", "#80A381", "#96A78E", "#B0B599"]
+        }
+        let text = "亜アAa0";
+
+        for (let name in graduations) {
+          let encoded = $("<div>");
+          for (var i = 0; i < graduations[name].length; i++) {
+            encoded.append($("<div>", {
+              class: "pc",
+              css: { "background-color" : graduations[name][i] },
+              html: text
+            })
+            .on("click", function () {
+              $(this).html(rgb2hex($(this).css("background-color")));
+            }));
+          }
+          console.log(encoded);
+          $("body").append(encoded);
+
+        }
+
+      });
+    </script>
+
+  </body>
+</html>

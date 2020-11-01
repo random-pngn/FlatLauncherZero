@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./plugins/semantic/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./plugins/slick/slick-theme.css"/>
+  <title>Flat Launcher</title>
+</head>
+<body>
+  <div class="Field">
+    <div class="Title ui top inverted fixed menu">
+      <div class="ui container">
+        <div class="item">
+          <h1 class="ui inverted header">
+            <img class="ui small circular image" src="./randomcat.png">
+            <div class="content">
+              RANDOM WORKS
+              <div class="sub header">
+                We made Games, Service, Music and Art
+              </div>
+            </div>
+          </h1>
+        </div>
+        <div class="right menu" id="right-menu">
+          <a class="item Help">
+            <i class="icon question circle"></i>
+            Help
+          </a>
+        </div>
+        <div class="right menu" style="margin-left: 0 !important">
+          <a class="item Quit">
+            <i class="icon power off"></i>
+            Quit
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui sticky Main">
+      <div class="ui top secondary pointing attached tabular menu">
+        <a class="item" id="All">
+          <i class="icon list ul"></i>
+          All
+        </a>
+        <a class="item" id="Game">
+          <i class="icon gamepad"></i>
+          Game
+        </a>
+        <a class="item" id="Music">
+          <i class="icon music"></i>
+          Music
+        </a>
+        <a class="item" id="Art">
+          <i class="icon file image"></i>
+          Art
+        </a>
+        <a class="item" id="Service">
+          <i class="icon paperclip"></i>
+          Service
+        </a>
+      </div>
+    </div>
+
+    <div class="ui modal" id="Help">
+      <div class="header">
+        <i class="icon question circle"></i>
+        <div class="content">
+          Help
+        </div>
+      </div>
+      <div class="scrolling content">
+        <div class="ui styled fluid">
+          <div class="title">
+            <i class="dropdown icon"></i>
+            これは何？
+          </div>
+          <div class="content">
+            <p>作品の情報をみることができます</p>
+            <p>感想を書いて評価することもできます</p>
+          </div>
+          <div class="ui divider"></div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            使い方
+          </div>
+          <div class="content">
+            <p>気になった作品をクリック</p>
+            <p>「PLAY」ボタンで起動</p>
+          </div>
+          <div class="ui divider"></div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            アンケート？
+          </div>
+          <div class="content">
+            <p>アンケートを是非かいてみてください</p>
+            <p>作った人が喜びます！</p>
+            <div class="ui steps">
+              <div class="step">
+                <i class="user icon"></i>
+                <div class="content">
+                  <div class="title">名前</div>
+                  <div class="description">なくてもOK</div>
+                </div>
+              </div>
+              <div class="step">
+                <i class="star icon"></i>
+                <div class="content">
+                  <div class="title">作品の評価</div>
+                  <div class="description">星５段階</div>
+                </div>
+              </div>
+              <div class="step">
+                <i class="pencil icon"></i>
+                <div class="content">
+                  <div class="title">感想</div>
+                  <div class="description">なくてもOK</div>
+                </div>
+              </div>
+            </div>
+            <p>「SAVE」を押すと保存されます！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui modal" id="Pickup"></div>
+
+    <div class="Main">
+      <div class="" id="root">
+        Loading JSX... (This script should be precompiled.)
+      </div>
+      <div class="ui header dividing">
+        Slide Show
+      </div>
+      <div class="ui hidden divider"></div>
+      <div class="ui segment padded basic">
+        <div class="ui container centered">
+          <div class="slider slider-hero">
+
+          </div>
+          <div class="slider slider-nav ScrollList">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="ui header dividing">
+        Content
+      </div>
+      <div class="ui hidden divider"></div>
+      <div class="Entries ui centered stackable grid cards"></div>
+    </div>
+
+    <div class="ui inverted vertical footer segment">
+      <div class="ui center aligned container">
+        <div class="ui inverted divider"></div>
+        <div>
+          (c) 2018-2020 Computer House Random
+        </div>
+        <div class="ui inverted divider"></div>
+        <div>
+          <img src="./cat.png">
+        </div>
+        <div>
+          Official Home Page
+        </div>
+        <img src="qr-code.png" class="ui tiny image centered">
+        <div>
+          https://ch-random.net/
+        </div>
+        <div class="ui inverted divider"></div>
+      </div>
+    </div>
+  </div>
+
+  <style media="screen">
+    body {
+      margin-top: 60px;
+      background-color: whitesmoke;
+    }
+    .Main {
+      padding: 40px;
+    }
+    .ImageFlow {
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .slider .slick-slide{
+     opacity: 0.5;
+    }
+    .slider .slick-current {
+      opacity: 1 !important;
+    }
+  </style>
+
+
+  <script>
+    window.jQuery = window.$ = require('./plugins/jquery-3.3.1.min.js');
+  </script>
+  <script src="react.js"></script>
+  <script src="JSXTransformer.js"></script>
+  <script type="text/javascript" src="./plugins/semantic/semantic.min.js"></script>
+  <script type="text/javascript" src="./plugins/slick/slick.min.js"></script>
+  <script type="text/javascript" src="sample.js"></script>
+</body>
+</html>
