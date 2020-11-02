@@ -11,7 +11,7 @@ function isExistFile(file) {
 }
 
 let temp = JSON.parse(fs.readFileSync(datapath.work + 'data.json', 'utf-8'));
-Object.keys(temp).filter(name => !isExistFile(datapath.work + name + "/" + datapath.exec)).forEach(name => delete temp[name]);
+Object.keys(temp).filter(name => !isExistFile(datapath.work + name + "/" + temp[name]["datapath"])).forEach(name => delete temp[name]);
 const data = temp;
 
 module.exports = data;
